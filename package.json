@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node index",
-    "server": "cross-env NODE_ENV=development nodemon index",
+    "start": "node index",
+    "server": "nodemon index",
     "client": "npm start --prefix ../clients",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
