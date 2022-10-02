@@ -24,7 +24,8 @@ app.use(cookieParser());
 if (process.env.NODE_ENV === "development") {
   app.use(
     cors({
-      origin: process.env.BASE_URL,
+      origin:`${process.env.BASE_URL}`,
+      credentials:true
     })
   );
   app.use(morgan("dev"));
@@ -33,7 +34,7 @@ if (process.env.NODE_ENV === "development") {
 }
 app.use("/api", require("./src/routes/authroute"));
 app.use("/fraazo", frazoController);
-app.get("/search",cors(),async(req,res)=>{
+app.get("/search",async(req,res)=>{
   try{
 
   const {name}=req.query
