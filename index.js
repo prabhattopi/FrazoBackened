@@ -7,12 +7,12 @@ const cors = require("cors");
 const Fraazo = require("./src/models/frazomodels");
 const cookieParser = require("cookie-parser");
 
-const connectDB = require("./src/config/db");
+
 const frazoController=require("./src/controllers/frazoController")
 //config .evn to ./src/config/config.evv
 dotenv.config({ path: "./src/config/config.env" });
 
-connectDB();
+
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
@@ -28,6 +28,8 @@ app.use(
       credentials:true
     })
   );
+  const connectDB = require("./src/config/db");
+  connectDB();
   app.use(morgan("dev"));
   //Morgan give information each reequest
   //cors allow the react localhost at port 3000 without any problem
