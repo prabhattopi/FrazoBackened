@@ -1,7 +1,7 @@
-const path = require("path");
+
 const express = require("express");
 const dotenv = require("dotenv");
-const colors = require("colors");
+
 const morgan = require("morgan");
 const cors = require("cors");
 const Fraazo = require("./src/models/frazomodels");
@@ -21,8 +21,8 @@ app.use(cookieParser());
 
 
 
-if (process.env.NODE_ENV === "development") {
-  app.use(
+
+app.use(
     cors({
       origin:`${process.env.BASE_URL}`,
       credentials:true
@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
   //Morgan give information each reequest
   //cors allow the react localhost at port 3000 without any problem
-}
+
 app.use("/api", require("./src/routes/authroute"));
 app.use("/fraazo", frazoController);
 app.get("/search",async(req,res)=>{
