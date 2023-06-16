@@ -37,7 +37,7 @@ app.use(cookieParser());
   //Morgan give information each reequest
   //cors allow the react localhost at port 3000 without any problem
 
-app.use("/api", require("./src/routes/authroute"));
+// app.use("/api", require("./src/routes/authroute"));
 app.use("/fraazo", frazoController);
 app.get("/search",async(req,res)=>{
   try{
