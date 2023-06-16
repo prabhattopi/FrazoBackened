@@ -10,7 +10,7 @@ const cookieParser = require("cookie-parser");
 
 const frazoController=require("./src/controllers/frazoController")
 //config .evn to ./src/config/config.evv
-dotenv.config({ path: "./src/config/config.env" });
+dotenv.config();
 
 
 
@@ -23,10 +23,7 @@ app.use(cookieParser());
 
 
 app.use(
-    cors({
-      origin:`${process.env.BASE_URL}`,
-      credentials:true
-    })
+    cors()
   );
   const connectDB = require("./src/config/db");
   connectDB();
