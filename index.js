@@ -22,9 +22,7 @@ app.use(cookieParser());
 
 
 
-app.use(
-    cors()
-  );
+app.use(cors());
   const connectDB = require("./src/config/db");
   connectDB();
   app.use(morgan("dev"));
