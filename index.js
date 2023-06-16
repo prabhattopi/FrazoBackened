@@ -15,6 +15,7 @@ dotenv.config();
 
 
 const app = express();
+app.options('*', cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
@@ -22,7 +23,7 @@ app.use(cookieParser());
 
 
 
-app.use(cors());
+
   const connectDB = require("./src/config/db");
   connectDB();
   app.use(morgan("dev"));
